@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Uploader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgba(104,141,149,1);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center; /* Added */
+      align-items: center; /* Added */
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+        font-size: large;
+        color: black;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .upload-form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .upload-form input,
+    .upload-form textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .upload-form button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    #successMessage {
+      margin-top: 10px;
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .image-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .image-item img {
+      max-width: 400px;
+      max-height: 400px;
+      margin-right: 20px;
+    }
+
+    .image-item .details {
+      flex-grow: 1;
+    }
+
+    .image-item .details h3 {
+      margin-top: 0;
+    }
+
+    .image-item .details p {
+      margin-bottom: 0;
+    }
+
+    .image-item .delete-btn {
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    img {
+        float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+        <img src="Logo.png" alt="Logo">
+        <h1>Image Uploader</h1>
+    </div>
+    <div class="upload-form">
+      <input type="file" id="imageInput" accept="image/*">
+      <input type="text" id="titleInput" placeholder="Enter title">
+      <textarea id="descriptionInput" placeholder="Enter description"></textarea>
+      <button id="uploadBtn">Upload</button>
+      <div id="successMessage" style="display: none;">Upload successful!</div>
+    </div>
+    <div id="imageList"></div>
+  </div>
+
+<script src="scripts/creaators.js"></script>
+</body>
+</html>

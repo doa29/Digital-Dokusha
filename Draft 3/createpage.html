@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="createpage copy.css"> <!-- Add your CSS file here -->
+    <style>
+        h1 {
+            color: white;
+            font-size: 40px;
+        }
+
+        p {
+            color: white;
+            font-size: 40px
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('1665843.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .signupbox {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #login-btn {
+            background-color: #ff6600;
+            color: #fff;
+            border: 5px solid #000;
+            padding: 10px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 24px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+    }
+
+    #login-btn:hover {
+      background-color: #ff8c00;
+    }
+    </style>
+</head>
+<body>
+    <div class="signupbox" style="width: 700px;">
+        <img src="Logo.png" class="avatar" alt="User Avatar">
+        <h1><b>Create an Account</b></h1>
+        <p>OR</p>
+        <button onclick="login()" id="login-btn">Login</button>
+        <form id="signupForm" method="get">
+            <p>Full Name</p>
+            <input type="text" style="width: 300px; height: 30px; " id="fullname" placeholder="Enter Full Name" required>
+            <p>Email Address</p>
+            <input type="email" style="width: 300px; height: 30px; " id="email" placeholder="Enter Email" required>
+            <p>Password</p>
+            <input type="password"  id="password" placeholder="Enter Password" required>
+            
+            <input type="submit" style="width: 100px;" value="Sign Up">
+        </form>
+    </div>
+
+<script src="scripts/createpage.js"></script>
+</body>
+</html>

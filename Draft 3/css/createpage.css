@@ -1,0 +1,12 @@
+/* style.css */
+#loginForm input[type="submit"] {
+    background-color: #0074D9;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Add more styles as needed */

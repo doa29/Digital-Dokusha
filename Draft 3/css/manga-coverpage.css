@@ -1,0 +1,126 @@
+
+
+.top-container {
+    margin-top: 10px;
+    display: flex;
+    position: relative;
+    
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #00141B;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.top-image {
+    width: 400px;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.content {
+    color: #FFF;
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration: none;
+    padding-left: 20px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.info-boxes {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    font-size: 14px;
+
+}
+
+.info-box {
+    text-align: left;
+    flex: 1;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.description {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit the number of lines */
+    -webkit-box-orient: vertical;
+    transition: max-height 0.5s ease;
+    max-height: 3em; /* Adjust based on line-clamp */
+}
+
+.description.expanded {
+    -webkit-line-clamp: unset; /* Remove the line clamp */
+    max-height: none; /* Remove the max-height restriction */
+}
+
+.read-more-button {
+    align-self: flex-start;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.read-more-button:hover {
+    background-color: #0056b3;
+}
+/* Code for the bottom section starts here */
+
+.bottom-container {
+
+    color: #FFF;
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration: none;
+    padding-left: 20px;
+    padding: 20px;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+.chapter-links {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.chapter-links a {
+    color: #FFF;
+    text-decoration: none;
+
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.upload-date {
+
+    text-align: right;
+    margin-bottom: 10px;
+}

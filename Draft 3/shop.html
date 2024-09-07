@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .shop-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .shop-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .shop-header h2 {
+            font-size: 36px;
+            color: #fff;
+            background-color: #ff6b6b;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .manga-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .manga-item {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .manga-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .manga-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .manga-item h3 {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .manga-item p {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .manga-item button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .manga-item button:hover {
+            background-color: #ff4d4d;
+        }
+
+        .cart-container {
+            position: fixed;
+            top: 100px; /* Moved 20 pixels upwards */
+            right: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cart-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-size: 20px;
+        }
+
+        .cart-items,
+        .cart-total {
+            display: none;
+        }
+
+        .cart-items.show,
+        .cart-total.show {
+            display: block;
+        }
+
+        .cart-icon:hover {
+            color: #ff6b6b;
+        }
+
+        .cart-icon .material-symbols-outlined {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .cart-count {
+            margin-left: 5px;
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        .cart-item .remove-btn {
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cart-total {
+            margin-top: 10px;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="nav-logo-section" class="nav-logo-section">
+            <a href="home.html">DIGITAL<br>DOKUSHA</a>
+        </div>
+        <div id="nav-link-section" class="nav-section">
+            <a href="home.html">Home</a>
+            <a href="genres.html">Genres</a>
+            <a href="popular.html">Popular</a>
+            <a href="forum.html">Forum</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+        <div id="nav-right-section" class="nav-right">
+            <a href="#">Shop</a>
+            <a href="#">Creators</a>
+            <a href="#">Login</a>
+        </div>
+        <div id="nav-border" class="nav-border-line"></div>
+    </nav>
+    <div class="search-container">
+        <form>
+            <div class="search">
+                <span class="search-icon material-symbols-outlined">search</span>
+                <input class="search-input" type="search" placeholder="Search">
+            </div>
+        </form>
+    </div>
+
+    <div class="shop-container">
+        <div class="shop-header">
+            <h2>Shop</h2>
+        </div>
+        <div class="manga-list">
+        </div>
+        <div class="cart-container">
+            <div class="cart-icon" onclick="toggleCartItems()">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <p>Total: $<span class="total-amount">0</span></p>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mangaData = [
+            {
+                id: 1,
+                title: 'Naruto',
+                price: 9.99,
+                image: 'naruto.jpg'
+            },
+            {
+                id: 2,
+                title: 'One Piece',
+                price: 12.99,
+                image: 'onepiece.jpg'
+            },
+            {
+                id: 3,
+                title: 'Attack on Titan',
+                price: 10.99,
+                image: 'attackontitan.jpg'
+            },
+            {
+                id: 4,
+                title: 'Demon Slayer',
+                price: 8.99,
+                image: 'demonslayer.jpg'
+            },
+            {
+                id: 5,
+                title: 'Jujutsu Kaisen',
+                price: 11.99,
+                image: 'jjk2.jpg'
+            },
+            {
+                id: 6,
+                title: 'My Hero Academia',
+                price: 9.49,
+                image: 'mha.jpg'
+            },
+            {
+                id: 7,
+                title: 'Chainsaw Man',
+                price: 10.49,
+                image: 'chainsawman.jpg'
+            },
+            {
+                id: 8,
+                title: 'Spy x Family',
+                price: 9.99,
+                image: 'spyxfam.jpg'
+            }
+        ];
+
+        const mangaList = document.querySelector('.manga-list');
+        const cartItems = document.querySelector('.cart-items');
+        const cartCount = document.querySelector('.cart-count');
+        const totalAmount = document.querySelector('.total-amount');
+        const checkoutBtn = document.querySelector('.checkout-btn');
+
+        let cart = [];
+        let total = 0;
+
+        function renderMangaItems() {
+            mangaList.innerHTML = '';
+            mangaData.forEach(manga => {
+                const mangaItem = document.createElement('div');
+                mangaItem.classList.add('manga-item');
+                mangaItem.innerHTML = `
+                <img src="${manga.image}" alt="${manga.title}" width="250" height="150">
+                    <h3>${manga.title}</h3>
+                    <p>$${manga.price}</p>
+                    <button class="add-to-cart" data-id="${manga.id}">Add to Cart</button>
+                `;
+                mangaList.appendChild(mangaItem);
+            });
+
+            const addToCartBtns = document.querySelectorAll('.add-to-cart');
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', addToCart);
+            });
+        }
+
+        function addToCart(event) {
+            const mangaId = event.target.dataset.id;
+            const manga = mangaData.find(item => item.id === parseInt(mangaId));
+
+            if (cart.some(item => item.id === manga.id)) {
+                alert('This manga is already in your cart.');
+                return;
+            }
+
+            cart.push(manga);
+            total += manga.price;
+            renderCart();
+        }
+
+        function renderCart() {
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <span>${item.title}</span>
+                    <span>$${item.price}</span>
+                    <button class="remove-btn" data-id="${item.id}">Remove</button>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+
+            cartCount.textContent = cart.length;
+            totalAmount.textContent = total.toFixed(2);
+
+            const removeBtns = document.querySelectorAll('.remove-btn');
+            removeBtns.forEach(btn => {
+                btn.addEventListener('click', removeFromCart);
+            });
+
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartTotalContainer = document.querySelector('.cart-total');
+            if (cart.length > 0) {
+                cartItemsContainer.classList.add('show');
+                cartTotalContainer.classList.add('show');
+            } else {
+                cartItemsContainer.classList.remove('show');
+                cartTotalContainer.classList.remove('show');
+            }
+        }
+
+        function removeFromCart(event) {
+            const mangaId = event.target.dataset.id;
+            const manga = cart.find(item => item.id === parseInt(mangaId));
+
+            cart = cart.filter(item => item.id !== parseInt(mangaId));
+            total -= manga.price;
+            renderCart();
+        }
+
+        checkoutBtn.addEventListener('click', () => {
+            window.location.href = 'purchase.html';
+        });
+
+        function toggleCartItems() {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartTotalContainer = document.querySelector('.cart-total');
+            cartItemsContainer.classList.toggle('show');
+            cartTotalContainer.classList.toggle('show');
+        }
+
+        renderMangaItems();
+    </script>
+
+    <script src="scripts/home.js"></script>
+</body>
+</html>

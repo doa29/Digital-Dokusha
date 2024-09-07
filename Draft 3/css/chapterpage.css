@@ -1,0 +1,51 @@
+body {
+    color: #FFF;
+    font-family: Heebo;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration: none;
+    padding-left: 20px;
+    text-align: left;
+}
+header {
+    text-align: center;
+    color: #f0f0f0;
+    padding: 40px 0;
+    padding-bottom: 80px;
+}
+
+.center {
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-column img {
+    width: 100%;
+    max-width: 800px; /* Adjust image width as needed */
+
+}

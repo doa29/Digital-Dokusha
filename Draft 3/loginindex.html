@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page </title>
+  <link rel="stylesheet" href="./loginpage.css">
+</head>
+<body background="moujib-aghrout-s9ESRUFnKDg-unsplash_1980x1320.jpg">
+  <div id="bg"></div>
+
+  <form method="get" onsubmit="login(); return false;">
+    <img src="Logo@2x.png" alt="">
+    <div class="form-field">
+      <input type="email" id="loginEmail" placeholder="Email / Username" required/>
+    </div>
+  
+    <div class="form-field">
+      <input type="password" id="loginPassword" placeholder="Password" required/>
+    </div>
+  
+    <div class="form-field">
+      <button class="btn" type="submit">Log in</button>
+      <h4>OR  </h4>
+      <button><a href="createpage.html">Create an account</a></button>
+    </div>
+  </form>
+
+  <script>
+    function login() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      // Retrieve user data from localStorage
+      const userData = localStorage.getItem(email);
+
+      if (!userData) {
+        alert('Email not found. Please check your credentials.');
+        return;
+      }
+
+      const { email: storedEmail, password: storedPassword } = JSON.parse(userData);
+
+      if (password === storedPassword) {
+        alert('Login successful!');
+        window.location.href = 'Home.html';
+      } else {
+        alert('Invalid password. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>

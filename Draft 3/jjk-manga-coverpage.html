@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manga Page</title>
+<link rel="stylesheet" href="css/home.css"/>
+<link rel="stylesheet" href="css/manga-coverpage.css"/>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link href="https://fonts.googleapis.com/css? family=Heebo:400,500,700,800|Fira+Sans:600&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?.1234567890[]';.()/\!@#$%^&*-=+_{}:|\.ABCDEFGHIJKLMNOPQRSTUVWXYZ*~\>" rel="stylesheet">
+
+</head>
+<body>
+<!-- Nav Bar code Starts Here -->
+    <nav>
+        <div id="nav-logo-section" class="nav-logo-section">
+            <a href="home.html">DIGITAL<br>DOKUSHA</a>
+        </div>
+        <div id="nav-link-section" class="nav-section">
+            <a href="home.html">Home</a>
+            <a href="genres.html">Genres</a>
+            <a href="popular.html">Popular</a>
+            <a href="forum.html">Forum</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+        <div id="nav-right-section" class="nav-right">
+            <a href="#">Shop</a>
+            <a href="#">Creators</a>
+            <a href="#">Login</a>
+        </div>
+        <div id="nav-border" class="nav-border-line"></div>
+    </nav>
+<!-- Search Bar -->
+    <div class="search-container">
+        <form>
+            <div class="search">
+                <span class="search-icon material-symbols-outlined">search</span>
+                <input class="search-input" type="search" placeholder="Search">
+            </div>
+        </form>
+    </div>
+<!-- Top Section -->
+<div class="top-container">
+    <img id="manga-image" src="images/jjk cover.webp" alt="Top Image" class="top-image">
+    <div class="content">
+        <h1 id="manga-title" class="header"></h1>
+        <div class="info-boxes">
+            <div class="info-box">Genre: <span id="manga-genre"></span></div>
+            <div class="info-box">Artist: <span id="manga-artist"></span></div>
+            <div class="info-box">Last Update: <span id="manga-last-update"></span></div>
+            <div class="info-box">Ratings: <span id="manga-ratings"></span></div>
+        </div>
+        <p id="manga-description" class="description"></p>
+        <button class="read-more-button">Read More</button>
+    </div>
+</div>
+
+<!-- Bottom Section -->
+<div class="bottom-container">
+    <h2>Chapter Name</h2>
+    <div id="chapter-links" class="chapter-links">
+        <!-- Chapters will be dynamically inserted here -->
+    </div>
+</div>
+    
+<script src="scripts/manga-coverpage.js"></script>
+</body>
+
+</html>

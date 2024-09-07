@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Anime</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            background: #00141B;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #FFF;
+        }
+        nav {
+    display: flex;
+    justify-content: space-between; /* Ensure the logo and links are spaced evenly */
+    align-items: left; /* Vertically center the items */
+    padding: 20px 20px 10px 20px; /* Adjusted padding to include 10px at the bottom */
+    border-bottom: #FFF 1px solid;
+    border-color: #FFF;
+
+    }
+    .nav-section {
+        margin-right: auto; /* This pushes the nav links to the left */
+        display: inline-block;
+    }
+
+    .nav-section a {
+        color: #FFF;
+        font-family: Heebo;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-decoration: none;
+        padding-left: 20px;
+        text-align: left;
+    }
+    .nav-logo-section {
+        margin-top: -5px;
+    }
+    .nav-logo-section a {
+        color: #FFF;
+        font-family: Heebo;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 80%; /* 19.2px */
+        text-decoration: none;
+
+    }
+
+    .nav-border-line a {
+        
+        width: 1440px;
+        height: 2px;
+        flex-shrink: 0;
+        box-sizing: border-box
+    }
+    .nav-right {
+        margin-left: auto; 
+    }
+    .nav-right a {
+        color: #FFF;
+        font-family: Heebo;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-decoration: none;
+        padding-left: 20px;
+    }
+
+        /* Nav Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: 400;
+        }
+        header a:hover {
+            color: #f1c40f;
+        }
+
+        /* Search Bar */
+        .search {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 30px;
+            background: #364b53;
+            transition: box-shadow 0.3s ease;
+        }
+        .search:hover,
+        .search:focus {
+            box-shadow: 0 0 15px rgba(34, 44, 63, 0.75);
+        }
+        .search input {
+            color: #FFF;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            border: none;
+            background: transparent;
+            flex: 1;
+        }
+        .search input::placeholder {
+            color: #d1d1d1;
+        }
+
+        /* Anime Section */
+        .anime {
+            color: #FFF;
+        }
+        .anime-slider,
+        .action-slider,
+        .child-slider,
+        .family-slider {
+            overflow: auto;
+            scroll-snap-type: x mandatory;
+        }
+        .swiper-slide {
+            scroll-snap-align: start;
+        }
+        .box {
+            height: 300px;
+            width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .anime .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .anime .content h3 {
+            font-size: 24px;
+        }
+        .anime .content p {
+            font-size: 16px;
+        }
+        .anime .content .btn {
+            text-align: center;
+            background: #FFF;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<!-- Nav Bar code Starts Here -->
+    <nav>
+        <div id="nav-logo-section" class="nav-logo-section">
+            <a href="home.html">DIGITAL<br>DOKUSHA</a>
+        </div>
+        <div id="nav-link-section" class="nav-section">
+            <a href="home.html">Home</a>
+            <a href="genres.html">Genres</a>
+            <a href="popular.html">Popular</a>
+            <a href="forum.html">Forum</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+        <div id="nav-right-section" class="nav-right">
+            <a href="Shopp.html">Shop</a>
+            <a href="Upload.html">Creators</a>
+            <a href="loginindex.html">Login</a>
+        </div>
+        <div id="nav-border" class="nav-border-line"></div>
+    </nav>
+
+    <section class="anime">
+        <h1 class="heading">Popular on Anime</h1>
+        <div class="swiper anime-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <div class="content">
+                            <h3>Naruto</h3>
+                            <img src="Comp_4_00000.png" alt="">
+                            <p>Guided by the spirit demon within him, orphaned Naruto learns
+                            to harness his powers as a ninja in this anime adventure series.</p>
+                            <a href="shopp.html" class="btn">Download</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more swiper slides as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section class="anime">
+        <h1 class="heading">Action Movies</h1>
+        <div class="swiper action-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <div class="content">
+                            <h3>Kuroko's Basketball</h3>
+                            <img src="Comp_4_00000_bab.png" alt="">
+                            <p>Guided by the spirit demon within him, orphaned Naruto learns
+                            to harness his powers as a ninja in this anime adventure series.</p>
+                            <a href="Shopp.html" class="btn">Download</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more action swiper slides as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section class="anime">
+        <h1 class="heading">Child Movies</h1>
+        <div class="swiper child-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <div class="content">
+                            <h3>Beyblade</h3>
+                            <img src="Comp_4_00000_bgn.png" alt="">
+                            <p>Guided by the spirit demon within him, orphaned Naruto learns
+                            to harness his powers as a ninja in this anime adventure series.</p>
+                            <a href="shopp.html" class="btn">Download</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more child swiper slides as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section class="anime">
+        <h1 class="heading">Family Movies</h1>
+        <div class="swiper family-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <div class="content">
+                            <h3>STAND BY ME Doraemon 2</h3>
+                            <img src="Comp_4_00000_nu.png" alt="">
+                            <p>Guided by the spirit demon within him, orphaned Naruto learns
+                            to harness his powers as a ninja in this anime adventure series.</p>
+                            <a href="shopp.html" class="btn">Download</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more family swiper slides as needed -->
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+
+        const startDragging = (e) => {
+            isDragging = true;
+            startX = e.pageX || e.touches[0].pageX;
+            scrollLeft = carousel.scrollLeft;
+        }
+
+        const stopDragging = () => {
+            isDragging = false;
+        }
+
+        const drag = (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            let x = e.pageX || e.touches[0].pageX;
+            let walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
+        }
+
+        prevButton.addEventListener('click', () => {
+            carousel.scrollLeft -= carousel.offsetWidth;
+        });
+
+        nextButton.addEventListener('click', () => {
+            carousel.scrollLeft += carousel.offsetWidth;
+        });
+
+        carousel.addEventListener('mousedown', startDragging);
+        carousel.addEventListener('touchstart', startDragging);
+
+        carousel.addEventListener('mousemove', drag);
+        carousel.addEventListener('touchmove', drag);
+
+        carousel.addEventListener('mouseup', stopDragging);
+        carousel.addEventListener('mouseleave', stopDragging);
+        carousel.addEventListener('touchend', stopDragging);
+    </script>

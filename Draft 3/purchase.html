@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - Digital Dokusha</title>
+    <link rel="stylesheet" type="text/css" href="purchase.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            max-width: 400px; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto 20px; 
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .order-details {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="digital_dokusha_logo.png" alt="Digital Dokusha Logo">
+        <h1>Order Details</h1>
+        <div class="order-details">
+            <p><strong>Title:</strong> One Piece Volume 1</p>
+            <p><strong>Price:</strong> $9.99</p>
+        </div>
+        
+        <div style="height: 20px;"></div>
+
+        <div id="paypal-button-container"></div>
+
+        <form id="purchaseForm" action="/process_payment.php" method="post">
+            <input type="hidden" id="paypalPaymentID" name="paypalPaymentID">
+            <input type="hidden" id="paypalToken" name="paypalToken">
+            <input type="hidden" id="paypalPayerID" name="paypalPayerID">
+        </form>
+    </div>
+    <script src="scripts/purchase.js"></script>
+
+</body>
+</html>

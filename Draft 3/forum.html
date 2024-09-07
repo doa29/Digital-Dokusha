@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" href="css/home.css"/>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .forum-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #111;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .forum-thread {
+        border: 1px solid #333;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #222;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .forum-post {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #333;
+        border-radius: 5px;
+    }
+
+    .forum-post-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .forum-post-author {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+
+    .forum-post-author img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+
+    .forum-post-timestamp {
+        color: #888;
+        font-size: 12px;
+    }
+
+    .forum-post-content {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+    .forum-post-reply {
+        margin-left: 20px;
+    }
+
+    .forum-post-reply-form {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .forum-post-reply-form textarea {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #333;
+        border-radius: 3px;
+        background-color: #222;
+        color: #fff;
+        resize: vertical;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .forum-post-reply-form button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-left: 5px;
+        font-family: 'Roboto', sans-serif;
+        transition: background-color 0.3s ease;
+    }
+
+    .forum-post-reply-form button:hover {
+        background-color: #3e8e41;
+    }
+
+    .new-post-form {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #222;
+        border: 1px solid #333;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .new-post-form textarea {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #333;
+        border-radius: 3px;
+        background-color: #333;
+        color: #fff;
+        resize: vertical;
+        margin-bottom: 10px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .new-post-form button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        transition: background-color 0.3s ease;
+    }
+
+    .new-post-form button:hover {
+        background-color: #3e8e41;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .user-info img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .user-info input {
+        padding: 5px;
+        border: 1px solid #333;
+        border-radius: 3px;
+        background-color: #333;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .user-info input[type="file"] {
+        display: none;
+    }
+
+    .user-info label {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        transition: background-color 0.3s ease;
+    }
+
+    .user-info label:hover {
+        background-color: #3e8e41;
+    }
+</style>
+</head>
+<body>
+    <nav>
+        <div id="nav-logo-section" class="nav-logo-section">
+            <a href="home.html">DIGITAL<br>DOKUSHA</a>
+        </div>
+        <div id="nav-link-section" class="nav-section">
+            <a href="home.html">Home</a>
+            <a href="genres.html">Genres</a>
+            <a href="popular.html">Popular</a>
+            <a href="forum.html">Forum</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+        <div id="nav-right-section" class="nav-right">
+            <a href="shop.html">Shop</a>
+            <a href="#">Creators</a>
+            <a href="loginindex.html">Login</a>
+        </div>
+        <div id="nav-border" class="nav-border-line"></div>
+    </nav>
+    <div class="search-container">
+        <form>
+            <div class="search">
+                <span class="search-icon material-symbols-outlined">search</span>
+                <input class="search-input" type="search" placeholder="Search">
+            </div>
+        </form>
+    </div>
+
+    <div class="forum-container">
+        <div class="user-info">
+            <img src="https://via.placeholder.com/40" alt="User Avatar" id="user-avatar">
+            <input type="text" id="username" placeholder="Enter your username">
+            <label for="avatar-upload">Upload Avatar</label>
+            <input type="file" id="avatar-upload" accept="image/*">
+        </div>
+
+        <div class="new-post-form">
+            <textarea placeholder="Create a new post..."></textarea>
+            <button type="button" id="create-post">Post</button>
+        </div>
+
+        <div id="forum-threads"></div>
+    </div>
+
+    <script src="scripts/home.js"></script>
+    <script>
+        let currentUser = null;
+        const usernameInput = document.getElementById('username');
+        const createPostBtn = document.getElementById('create-post');
+        const forumThreadsContainer = document.getElementById('forum-threads');
+        const userAvatar = document.getElementById('user-avatar');
+        const avatarUpload = document.getElementById('avatar-upload');
+
+        userAvatar.src = 'https://via.placeholder.com/40';
+
+        usernameInput.addEventListener('input', () => {
+            currentUser = usernameInput.value || 'Guest';
+        });
+
+        avatarUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    userAvatar.src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        createPostBtn.addEventListener('click', () => {
+            const newPostForm = document.querySelector('.new-post-form textarea');
+            const postContent = newPostForm.value.trim();
+
+            if (postContent) {
+                const newThread = createThread(postContent, currentUser, userAvatar.src);
+                forumThreadsContainer.appendChild(newThread);
+                newPostForm.value = '';
+            }
+        });
+
+        function createThread(content, author, avatarSrc) {
+            const thread = document.createElement('div');
+            thread.classList.add('forum-thread');
+
+            const post = createPost(content, author, avatarSrc);
+            thread.appendChild(post);
+
+            const replyForm = createReplyForm();
+            thread.appendChild(replyForm);
+
+            return thread;
+        }
+
+        function createPost(content, author, avatarSrc) {
+            const post = document.createElement('div');
+            post.classList.add('forum-post');
+
+            const header = document.createElement('div');
+            header.classList.add('forum-post-header');
+
+            const authorElement = document.createElement('span');
+            authorElement.classList.add('forum-post-author');
+
+            const authorAvatar = document.createElement('img');
+            authorAvatar.src = avatarSrc;
+            authorAvatar.alt = 'Author Avatar';
+
+            const authorName = document.createElement('span');
+            authorName.textContent = author;
+
+            authorElement.appendChild(authorAvatar);
+            authorElement.appendChild(authorName);
+
+            const timestamp = document.createElement('span');
+            timestamp.classList.add('forum-post-timestamp');
+            timestamp.textContent = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+            header.appendChild(authorElement);
+            header.appendChild(timestamp);
+
+            const contentElement = document.createElement('div');
+            contentElement.classList.add('forum-post-content');
+            contentElement.textContent = content;
+
+            post.appendChild(header);
+            post.appendChild(contentElement);
+
+            return post;
+        }
+
+        function createReplyForm() {
+            const replyForm = document.createElement('form');
+            replyForm.classList.add('forum-post-reply-form');
+
+            const textarea = document.createElement('textarea');
+            textarea.placeholder = 'Write your reply...';
+
+            const submitBtn = document.createElement('button');
+            submitBtn.type = 'submit';
+            submitBtn.textContent = 'Reply';
+
+            replyForm.appendChild(textarea);
+            replyForm.appendChild(submitBtn);
+
+            replyForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const replyContent = textarea.value.trim();
+
+                if (replyContent) {
+                    const replyContainer = replyForm.parentNode.querySelector('.forum-post-reply');
+                    const newReply = createPost(replyContent, currentUser, userAvatar.src);
+                    replyContainer.appendChild(newReply);
+                    textarea.value = '';
+                }
+            });
+
+            return replyForm;
+        }
+    </script>
+</body>
+</html>
